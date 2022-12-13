@@ -163,6 +163,11 @@ public final class PianoAnalytics {
         queue.push(ProcessingType.UpdateContext, m: model, p: nil)
     }
 
+    // Override LifecycleSteps `applicationActive`
+    public final func applicationDidEnterForeground() {
+        queue.lifeCycleStep.applicationActive()
+    }
+
     // MARK: Privacy
 
     /// Update privacy mode
